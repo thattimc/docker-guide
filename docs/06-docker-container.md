@@ -39,3 +39,22 @@ Now verify the container again, you will see no container is currently running n
 ```bash
 docker ps
 ```
+
+Instead, the container still exists with the `Exited` status; you can verify it  by running:
+
+```bash
+docker ps -a
+```
+
+It will show a similar result:
+
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+30b97ee57158        busybox             "sh"                12 minutes ago      Exited (0) 9 minutes ago                       charming_jones
+```
+
+You can remove it by typing:
+
+.```bash
+docker rm 30b97ee57158
+```
