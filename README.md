@@ -10,5 +10,5 @@ The target audience for this tutorial will be the developers who are the beginne
 
 * [Prerequisites](docs/01-prerequisites.md)
 * [What is a Container?](docs/02-what-is-container.md)
-* [Containers and Virtual Machines?](docs/03-containers-and-virtual-machines.md)
+* [Containers and Virtual Machines](docs/03-containers-and-virtual-machines.md)
 * [Hello World](docs/04-hello-world.md)

@@ -20,4 +20,4 @@ Container images become containers at runtime and in the case of Docker containe
 
 Docker container registry is an image storage place that makes it easy for developers to store, manage, and deploy Docker container images. Just like Github for storing code repositories.
 
-Next: [Containers and Virtual Machines?](03-containers-and-virtual-machines.md)
+Next: [Containers and Virtual Machines](03-containers-and-virtual-machines.md)
