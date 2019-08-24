@@ -9,3 +9,4 @@ The target audience for this tutorial will be the developers who are the beginne
 ## Labs
 
 * [Prerequisites](docs/01-prerequisites.md)
+* [What is a Container?](docs/02-what-is-container.md)
