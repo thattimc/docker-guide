@@ -7,6 +7,7 @@ docker run hello-world
 ```
 
 You will get the output response like following:
+
 ```
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -35,3 +36,13 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+To generate this message, Docker took the following steps:
+
+1. The Docker client contacted the Docker daemon.
+2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+   (amd64)
+3. The Docker daemon created a new container from that image which runs
+   the executable that produces the output you are currently reading.
+4. The Docker daemonn streamed that output to the Docker client, which
+   sent it to your terminal.
