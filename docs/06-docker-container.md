@@ -64,3 +64,17 @@ If you want container automatically remove itself after the container in exited 
 ```bash
 docker run -it --rm busybox sh
 ```
+
+Also, instead of creating a container for executing the program, we can use `docker exec` to running the program in the current container:
+
+```bash
+# Check container id  from existing running containers
+docker ps
+
+# Return the result similar as following
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+a843b66bebbe        busybox             "sh"                4 seconds ago       Up 4 seconds                            pensive_carson
+
+# Execute the program using the current container
+docker exec -it a843b66bebbe sh
+```
