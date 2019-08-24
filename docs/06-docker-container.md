@@ -11,8 +11,8 @@ This `docker run` format can be broken down into two parts:
 1. docker run [options]
 2. [image] [command]
 
-- **options** `-it` means we want to Keep STDIN open even if not attached and allocate a pseudo-TTY.
-- **image** we are using container busybox image.
+- **options** `-it` means we want to keep STDIN open even if not attached and allocate a pseudo-TTY
+- **image** we are using container busybox image
 - **command** running the sh command
 
 To verify the container is running, type the following command from the new terminal:
@@ -57,4 +57,10 @@ You can remove container by typing:
 
 ```bash
 docker rm 30b97ee57158
+```
+
+If you want container automatically remove itself after the container in exited status. You can specify `--rm` options when executing the `docker run` command:
+
+```bash
+docker run -it --rm busybox sh
 ```
