@@ -53,4 +53,4 @@ Now no image exists in the local machine:
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 ```
 
-
+Next: [Docker Container](06-docker-container.md)
