@@ -12,4 +12,6 @@ A Docker container image is a lightweight, standalone, executable package of sof
 
 ## Docker Container Image > Docker Container
 
+![Image to Container](https://raw.githubusercontent.com/timshingyu/docker-guide/master/images/image_to_container.png)
+
 Container images become containers at runtime and in the case of Docker containers - images become containers when they run on Docker Engine.
