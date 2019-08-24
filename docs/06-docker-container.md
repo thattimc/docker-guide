@@ -53,8 +53,8 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 30b97ee57158        busybox             "sh"                12 minutes ago      Exited (0) 9 minutes ago                       charming_jones
 ```
 
-You can remove it by typing:
+You can remove container by typing:
 
-.```bash
+```bash
 docker rm 30b97ee57158
 ```
