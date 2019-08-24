@@ -46,3 +46,5 @@ To generate this message, Docker took the following steps:
    the executable that produces the output you are currently reading.
 4. The Docker daemonn streamed that output to the Docker client, which
    sent it to your terminal.
+
+Next: [Docker Image](05-docker-image.md)

@@ -12,3 +12,4 @@ The target audience for this tutorial will be the developers who are the beginne
 * [What is a Container?](docs/02-what-is-container.md)
 * [Containers and Virtual Machines](docs/03-containers-and-virtual-machines.md)
 * [Hello World](docs/04-hello-world.md)
+* [Docker Image](docs/05-docker-image.md)
