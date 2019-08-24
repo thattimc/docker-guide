@@ -9,7 +9,7 @@ docker run -it busybox sh
 This `docker run` format can be broken down into two parts:
 
 1. docker run [options]
-2. <image> <command>
+2. [image] [command]
 
 - **options** `-it` means we want to Keep STDIN open even if not attached and allocate a pseudo-TTY.
 - **image** we are using container busybox image.
