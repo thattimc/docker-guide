@@ -20,3 +20,10 @@ docker pull busybox
 ```
 
 > if we didn't specify the tag, by default it will pull the latest tag.
+
+Let review the images again:
+
+```bash
+docker images
+```
+
