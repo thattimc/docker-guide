@@ -27,3 +27,15 @@ And you will see a similar response like this:
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 30b97ee57158        busybox             "sh"                7 seconds ago       Up 6 seconds                            charming_jones
 ```
+
+Go back to the previous terminal and exit shell environment by running:
+
+```bash
+exit
+```
+
+Now verify the container again, you will see no container is currently running now:
+
+```bash
+docker ps
+```
