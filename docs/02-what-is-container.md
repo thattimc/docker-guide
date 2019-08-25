@@ -10,7 +10,7 @@ A container is a standard unit of software that packages up code and all its dep
 
 A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.
 
-## Docker Container Image > Docker Container
+## From docker container image to docker container
 
 ![Image to Container](https://raw.githubusercontent.com/timshingyu/docker-guide/master/images/image_to_container.png)
 

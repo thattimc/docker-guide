@@ -40,7 +40,7 @@ Now verify the container again, you will see no container is currently running n
 docker ps
 ```
 
-Instead, the container still exists with the `Exited` status; you can verify it  by running:
+Instead, the container still exists with the `Exited` status; you can verify it by running:
 
 ```bash
 docker ps -a
