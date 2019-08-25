@@ -12,13 +12,14 @@ Make sure you have installed the Docker CE in your local machine. [Choose one in
 
 ### Verify docker and docker-compose versions
 
-Run the following commands to verify your docker and docker-compose version:
+Verify docker version:
 
 ```bash
-# For docker version
 docker version
+```
 
-# For docker-compose
+Verify docker compose version:
+```bash
 docker-compose -v
 ```
 
