@@ -2,27 +2,34 @@
 
 A Dockerfile is a file that contains a set of instructions that describe an environment configuration.
 
-Let create `Dockerfile` in the application root folder:
+Let try to create rails docker image using `Dockerfile`:
 
 ```docker
-# Use an official Python runtime as a parent image
-FROM python:2.7-slim
+FROM ruby:2.6.3
 
-# Set the working directory to /app
-WORKDIR /app
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+WORKDIR /usr/src/app
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+COPY Gemfile /usr/src/app
+COPY Gemfile.lock /usr/src/app/Gemfile.lock
+RUN bundle install
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+COPY . /usr/src/app
 
-# Define environment variable
-ENV NAME World
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
 
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
 ```
+Let explain it line by line:
+
+```docker
+FROM ruby:2.6.3
+```
+
+We are using docker image ruby with tag 2.6.3 as the base image for our building our custom image. Visit https://hub.docker.com to see what images are available to choose.
