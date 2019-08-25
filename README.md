@@ -14,3 +14,4 @@ The target audience for this tutorial will be the developers who are the beginne
 * [Hello World](docs/04-hello-world.md)
 * [Docker Image](docs/05-docker-image.md)
 * [Docker Container](docs/06-docker-container.md)
+* [Dockerfile](docs/07-dockerfile.md)
