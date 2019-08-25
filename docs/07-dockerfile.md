@@ -32,4 +32,17 @@ Let explain it line by line:
 FROM ruby:2.6.3
 ```
 
-We are using docker image ruby with tag 2.6.3 as the base image for our building our custom image. Visit https://hub.docker.com to see what images are available to choose.
+We are using docker image ruby with tag 2.6.3 as the base image to build out our custom image. Visit https://hub.docker.com to see what images are available to choose.
+
+```docker
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client yarn
+```
+
+Then we update the image packages and install nodejs, postgresql-client, and yarn packages for our rails application.
+
+
+```docker
+WORKDIR /usr/src/app
+```
+
+This line set /usr/src/app folder as the workdir inside our image container.
