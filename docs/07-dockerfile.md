@@ -53,11 +53,26 @@ This line set /usr/src/app folder as the workdir inside our image container.
 WORKDIR /usr/src/app
 ```
 
-Start copy Gemfile, and Gemfile.lock to image first, then run `bundle install` to install ruby gems inside the images. After that copy the remain project files/folders into the image. As docker using layer caching for each `RUN`, `COPY` and `ADD` commands, copy Gemfile and Gemfile.lock before copy entire source code can leverage docker layer caching which in term saving time for install the ruby gem dependancies.
+Start copy Gemfile, and Gemfile.lock to image first, then run `bundle install` to install ruby gems inside the images. After that copy the remain project files/folders into the image. As docker using layer caching for each `RUN`, `COPY` and `ADD` commands, copy Gemfile and Gemfile.lock before copy entire source code can leverage docker layer caching which in term saving time for install the ruby gem dependencies.
 
 ```docker
 COPY Gemfile /usr/src/app
 COPY Gemfile.lock /usr/src/app/Gemfile.lock
 RUN bundle install
 COPY . /usr/src/app
+```
+
+Now, copy `entrypoint.sh` script to container folder `/usr/bin/` and given the execute permission to that file. Set the `ENTRYPOINT` to run `entrypoint.sh` every time the container startup. Then, expose port 3000 for outside to connect.
+
+```docker
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+```
+
+Finally, we set the default command to run when no command has specified for running the container.
+
+```docker
+CMD ["rails", "server", "-b", "0.0.0.0"]
 ```
