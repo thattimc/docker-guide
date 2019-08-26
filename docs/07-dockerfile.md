@@ -108,3 +108,11 @@ Right now we can try to build a docker image and tag it as `myapp`
 ```bash
 docker build -t myapp .
 ```
+
+You can verify the image by:
+
+```bash
+docker images
+```
+
+Next: [Share your image](08-share-your-image.md)
