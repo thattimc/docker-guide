@@ -21,7 +21,6 @@ WORKDIR /usr/src/app
 COPY Gemfile /usr/src/app
 COPY Gemfile.lock /usr/src/app/Gemfile.lock
 RUN bundle install
-
 COPY . /usr/src/app
 
 # Add a script to be executed every time the container starts.
@@ -52,4 +51,13 @@ This line set /usr/src/app folder as the workdir inside our image container.
 
 ```docker
 WORKDIR /usr/src/app
+```
+
+Start copy Gemfile, and Gemfile.lock to image first, then run `bundle install` to install ruby gems inside the images. After that copy the remain project files/folders into the image. As docker using layer caching for each `RUN`, `COPY` and `ADD` commands, copy Gemfile and Gemfile.lock before copy entire source code can leverage docker layer caching which in term saving time for install the ruby gem dependancies.
+
+```docker
+COPY Gemfile /usr/src/app
+COPY Gemfile.lock /usr/src/app/Gemfile.lock
+RUN bundle install
+COPY . /usr/src/app
 ```
