@@ -76,3 +76,9 @@ Finally, we set the default command to run when no command has specified for run
 ```docker
 CMD ["rails", "server", "-b", "0.0.0.0"]
 ```
+
+Right now we can try to build docker image and tag it as `myapp`
+
+```bash
+docker build -t myapp .
+```
