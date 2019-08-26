@@ -170,3 +170,5 @@ ports: - "3001:3000"
 Now, rebuild and restart the app with `docker-compose up --build`.
 
 Inside the container, your app is running on the same port as before `3000`, but the Rails Welcome is now available on `http://localhost:3001` on your local host.
+
+Next: [Share Your Image](09-share-your-image.md)
