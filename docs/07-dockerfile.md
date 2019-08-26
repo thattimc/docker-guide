@@ -77,7 +77,33 @@ Finally, we set the default command to run when no command has specified for run
 CMD ["rails", "server", "-b", "0.0.0.0"]
 ```
 
-Right now we can try to build docker image and tag it as `myapp`
+Next, create a bootstrap `Gemfile` which load Rails. It'll be overwritten in a moment by `rails new`.
+
+```ruby
+source 'https://rubygems.org'
+gem 'rails', '~> 6.0.0'
+```
+
+Create an empty `Gemfile.lock` to build our `Dockerfile`.
+
+```bash
+touch Gemfile.lock
+```
+
+Next, provide an entrypoint script to fix a Rails-specific issue that prevents the server from restarting when a certain `server.pid` file pre-exists. This script will be executed every time the container gets started. `entrypoint.sh` consists of:
+
+```bash
+#!/bin/bash
+set -e
+
+# Remove a potentially pre-existing server.pid for Rails.
+rm -f /usr/src/app/tmp/pids/server.pid
+
+# Then exec the container's main process (what's set as CMD in the Dockerfile).
+exec "$@"
+```
+
+Right now we can try to build a docker image and tag it as `myapp`
 
 ```bash
 docker build -t myapp .
