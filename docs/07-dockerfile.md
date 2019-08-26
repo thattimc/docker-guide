@@ -53,7 +53,15 @@ This line set /usr/src/app folder as the workdir inside our image container.
 WORKDIR /usr/src/app
 ```
 
-Start copy Gemfile, and Gemfile.lock to image first, then run `bundle install` to install ruby gems inside the images. After that copy the remain project files/folders into the image. As docker using layer caching for each `RUN`, `COPY` and `ADD` commands, copy Gemfile and Gemfile.lock before copy entire source code can leverage docker layer caching which in term saving time for install the ruby gem dependencies.
+Copy package.json and yarn.lock to project root folder inside the container. Then run `yarn install --check-files` to install npm packages.
+
+```docker
+COPY package.json /usr/src/app
+COPY yarn.lock /usr/src/app
+RUN yarn install --check-files
+```
+
+Copy Gemfile, and Gemfile.lock to image first, then run `bundle install` to install ruby gems inside the images. After that copy the remain project files/folders into the image. As docker using layer caching for each `RUN`, `COPY` and `ADD` commands, copy Gemfile and Gemfile.lock before copy entire source code can leverage docker layer caching which in term saving time for install the ruby gem dependencies.
 
 ```docker
 COPY Gemfile /usr/src/app
@@ -77,7 +85,14 @@ Finally, we set the default command to run when no command has specified for run
 CMD ["rails", "server", "-b", "0.0.0.0"]
 ```
 
-Next, create a bootstrap `Gemfile` which load Rails. It'll be overwritten in a moment by `rails new`.
+Create an empty `package.json` and `yarn.lock` files
+
+```bash
+touch package.json
+touch yarn.lock
+```
+
+Create a bootstrap `Gemfile` which load Rails. It'll be overwritten in a moment by `rails new`.
 
 ```ruby
 source 'https://rubygems.org'
@@ -115,4 +130,4 @@ You can verify the image by:
 docker images
 ```
 
-Next: [Share your image](08-share-your-image.md)
+Next: [Docker Compose](08-docker-compose.md)

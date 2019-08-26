@@ -15,4 +15,5 @@ The target audience for this tutorial will be the developers who are the beginne
 * [Docker Image](docs/05-docker-image.md)
 * [Docker Container](docs/06-docker-container.md)
 * [Dockerfile](docs/07-dockerfile.md)
-* [Share your image](docs/08-share-your-image.md)
+* [Docker Compose](docs/08-docker-compose.md)
+* [Share Your Image](docs/09-share-your-image.md)
