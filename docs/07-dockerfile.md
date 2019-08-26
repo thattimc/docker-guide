@@ -2,14 +2,14 @@
 
 A Dockerfile is a file that contains a set of instructions that describe an environment configuration.
 
-Let try to create rails docker image using `Dockerfile`, first create project folder:
+Let try to create rails docker image using `Dockerfile`. First, create a project folder:
 
 ```bash
 mkdir ~/myapp
 cd ~/myapp
 ```
 
-Create `Dockerfile` with following content in the project root folder:
+Create `Dockerfile` with the following content in the project root folder:
 
 ```docker
 FROM ruby:2.6.3
